@@ -1,0 +1,87 @@
+# File Name : widgets.kv
+# Screen Size 800 x 480
+
+
+<MyWidget>:
+    Button:
+        text: 'X'
+        font_size: 32
+        color: 1,0,0,1
+        pos: 750, 430
+        size: 50, 50
+        id: but_Exit
+        on_release: root.exit(but_Exit)
+
+
+    Button:
+        text: 'Play'
+        font_size: 32
+        color: .8,.9,0,1
+        pos: 100,200
+        size: 100,50
+        id: but_Play
+        on_press: root.play_music(but_Play)
+
+    Button:
+        text: 'Stop'
+        font_size: 32
+        size: 100,50
+        pos: 200,200
+        id: but_Pause
+        on_press: root.pause_music(but_Pause)
+
+    Button:
+        text: 'Mute'
+        font_size: 32
+        size: 100,50
+        pos: 580,20
+        id: but_Mute
+        on_press: root.mute_volume(but_Mute)
+
+    Button:
+        text: 'Random'
+        font_size: 24
+        size: 100,50
+        pos: 300, 200
+        id: but_Random
+        on_press: root.random_song(but_Random)
+
+    Button:
+        text: 'Cont.'
+        font_size: 24
+        size: 100,50
+        pos: 400,200
+        id: but_cont
+        on_press: root.continous = 1
+
+    Slider:
+        min: 0
+        max: 100
+        value: 15
+        id: slide_volume
+        orientation: 'vertical'
+        pos: 600,50
+        cursor_height: 32
+        padding: 32
+        size: 32, 300
+
+    Label:
+        font_size: 18
+        pos: 200, 300
+        text: 'File Name'
+        id: label_filename	 
+
+    Label:
+        font_size: 18
+        pos: 300, 400 
+        text: 'Time Bitch'
+        id: time_clock
+
+    Label:
+        font_size: 18
+        pos: 200, 100
+        text: '0.0 / 0.0'
+        id: track_position
+
+
+
